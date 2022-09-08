@@ -1,0 +1,10 @@
+<h2>Get the hyperlink</h2>
+<html><body><p>Given the link to a web page, write a program that <strong>prints</strong> a hyperlink to the specific act of "Pygmalion" by Bernard Shaw. There are two lines in the input: the number of the act (be careful: the indexes start from 0) and the link to a web page with the text of "Pygmalion". For example, the input can look like this:</p>
+<pre><code class="language-no-highlight">3
+http://www.gutenberg.org/files/3825/3825-h/3825-h.htm</code></pre>
+<p>There are several hyperlinks on this page, which can be used to jump to one of the play's five acts.</p>
+<p>In response to the input above, your program would need to print the following hyperlink: <code class="java">#act2</code>. Note that you shouldn't print the WHOLE page link, just this small part.</p>
+<p><button class="btn-sm btn-outline-secondary" onclick="getElementById('hint-811').style.display='inline'">
+        Hint
+      </button>
+</p><div id="hint-811" style="display:none;">Your algorithm to the task may look as follows. First, find all anchors. Then, choose the act from the list. Finally, get the <code class="java">href</code> attribute using the <code class="java">get</code> method.</div></body></html><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 30 seconds</font><br><br>
