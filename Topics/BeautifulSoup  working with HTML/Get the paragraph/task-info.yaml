@@ -7,9 +7,9 @@ files:
 
     from bs4 import BeautifulSoup
   learner_created: false
-feedback_link: https://hyperskill.org/learn/step/10213#comment
+feedback_link: https://hyperskill.org/learn/step/10215#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: Thu, 08 Sep 2022 07:47:18 UTC
+  time: Thu, 08 Sep 2022 08:04:26 UTC
 record: -1

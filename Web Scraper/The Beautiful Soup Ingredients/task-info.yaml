@@ -58,5 +58,8 @@ files:
   text: QUOTES_URL = 'http://api.quotable.io/quotes/-CzNrWMGIg8V'
   learner_created: true
 feedback_link: https://hyperskill.org/learn/step/11756#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Thu, 08 Sep 2022 09:11:48 UTC
 record: -1
