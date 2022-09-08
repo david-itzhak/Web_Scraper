@@ -1,0 +1,19 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: <code>__truesplit__()</code>
+- text: <code>__truedivision__()</code>
+- text: <code>__truediv__()</code>
+- text: <code>_truediv_()</code>
+- text: <code>_truedivision_()</code>
+files:
+- name: main.py
+  visible: true
+  text: |+
+    #  You can experiment here, it won’t be checked
+
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15530#comment
+status: Solved
+record: -1
+local_check: false

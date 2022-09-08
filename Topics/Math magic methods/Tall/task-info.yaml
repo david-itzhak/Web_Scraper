@@ -1,0 +1,15 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: |-
+    class Person:
+        def __init__(self, name, height):
+            self.name = name
+            self.height = height
+
+        # define your methods here
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7450#comment
+status: Solved
+record: -1

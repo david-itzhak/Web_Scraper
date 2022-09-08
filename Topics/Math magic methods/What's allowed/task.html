@@ -1,0 +1,19 @@
+<h2>What's allowed</h2>
+<html><body><p>Below you can see the class <code class="language-python">Account</code>. It has 2 instance attributes, <code class="language-python">account_id</code> and <code class="language-python">amount</code>, as well as some methods.</p>
+<pre><code class="language-python">class Account:
+    def __init__(self, account_id, amount):
+        self.account_id = account_id
+        self.amount = amount
+
+    def __iadd__(self, other):
+        self.amount += other.amount
+        return self
+
+    def __eq__(self, other):
+        return ((self.account_id == other.account_id) and 
+                (self.amount == other.amount))
+</code></pre>
+<p>We've created two instances of the class <code class="language-python">Account</code>:</p>
+<pre><code class="language-python">account1 = Account("acc0000927", 999.99)
+account2 = Account("acc0083972", 1564.26)</code></pre>
+<p>Which of the following lines of code will work?</p></body></html>

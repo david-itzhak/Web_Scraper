@@ -1,0 +1,11 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: |-
+    class City:
+        # define methods here
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7448#comment
+status: Solved
+record: -1
