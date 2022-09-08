@@ -1,0 +1,18 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: They'll be equal, because they are of equal length
+- text: '"b" will be greater, because its Unicode code point is greater'
+- text: '"3" will be greater, because "b" is the second character in the alphabet'
+- text: TypeError, because strings obviously can't be compared
+files:
+- name: main.py
+  visible: true
+  text: |+
+    #  You can experiment here, it won’t be checked
+
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8063#comment
+status: Solved
+record: -1
+local_check: false
