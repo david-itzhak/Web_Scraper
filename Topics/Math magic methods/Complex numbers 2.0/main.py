@@ -25,4 +25,10 @@ class ComplexNumber:
         string = "{} {} {}i".format(self.real_part, sign, abs(self.im_part))
         return string
 
-    # define the rest of the methods here
+    def __sub__(self, other):
+        return ComplexNumber(self.real_part - other.real_part, self.im_part - other.im_part)
+
+    def __truediv__(self, other):
+        real = other.real_part / (other.real_part ** 2 + other.im_part ** 2)
+        imaginary = -(other.im_part / (other.real_part ** 2 + other.im_part ** 2))
+        return self * ComplexNumber(real, imaginary)
