@@ -7,3 +7,6 @@ content:
 - One character strings comparison
 - Bytes() values range
 - Ord() application
+- Best guess
+- Chr() application
+- Printable
