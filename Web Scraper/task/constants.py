@@ -1,1 +1,0 @@
-QUOTES_URL = 'http://api.quotable.io/quotes/-CzNrWMGIg8V'

@@ -61,10 +61,12 @@ files:
     if __name__ == '__main__':
         WebScraperTest().run_tests()
   learner_created: false
-- name: constants.py
+- name: source.html
   visible: true
-  text: QUOTES_URL = 'http://api.quotable.io/quotes/-CzNrWMGIg8V'
   learner_created: true
 feedback_link: https://hyperskill.org/learn/step/11757#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 10 Sep 2022 19:15:09 UTC
 record: -1
