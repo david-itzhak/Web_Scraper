@@ -1,3 +1,11 @@
 content:
 - Theory
 - Bytes slices
+- To_bytes()
+- Single integer conversion
+- Zero bytes
+- Byteorder
+- Encode() and bytes()
+- b prefix
+- Something's wrong
+- Decipher a message

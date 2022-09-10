@@ -1,0 +1,33 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: |-
+    number = input()
+    bytes_number = number.to_bytes(5, byteorder=little)
+    number_from_bytes = int.from_bytes(bytes_number, 'big')
+    print(bytes_number == number_from_bytes)  # <-- expected to be True!
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15482#comment
+status: Failed
+feedback:
+  message: |
+    Failed test #1 of 3. Runtime error
+
+    This is a sample test from the problem statement!
+
+    Test input:
+    0
+    Correct output:
+    True
+
+    Your code output:
+
+
+    Error:
+    Traceback (most recent call last):
+      File "jailed_code", line 2, in <module>
+        bytes_number = number.to_bytes(2, 'little')
+    AttributeError: 'str' object has no attribute 'to_bytes'
+  time: Sat, 10 Sep 2022 14:17:33 UTC
+record: -1

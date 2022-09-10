@@ -1,0 +1,5 @@
+string_input = input().encode()
+num = int(input())
+offset = sum(num.to_bytes(2, 'little'))
+new_string = ''.join([chr(b + offset) for b in string_input])
+print(new_string)

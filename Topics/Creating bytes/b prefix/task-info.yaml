@@ -1,0 +1,18 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: b'Funny||by`tes'
+- text: b'@Chão\tBaby'
+- text: b'~Good&amp;question^'
+- text: b'#Right÷answer88'
+files:
+- name: main.py
+  visible: true
+  text: |+
+    #  You can experiment here, it won’t be checked
+
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8070#comment
+status: Solved
+record: -1
+local_check: false
