@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import string
+import os
 
 
 def get_user_input() -> tuple:
@@ -10,30 +11,24 @@ def get_user_input() -> tuple:
 
 
 def send_request(url: str) -> requests.Response:
-    response: requests.Response = requests.get(url, headers={'Accept-Language': 'en-US,en;q=0.5'})
-    if response:
-        return response
-    else:
-        print(f'The URL returned {response.status_code}!')
-        return None
+    return requests.get(url, headers={'Accept-Language': 'en-US,en;q=0.5'})
 
 
-def is_news(article):
+def is_necessary_type(article, article_type):
     span_type = article.find('span', {'class': 'c-meta__type'})
-    return span_type and span_type.text == 'News'
+    return span_type and span_type.text == article_type
 
 
-def extract_news_links(content: str) -> list[str]:
+def extract_news_links(content: str, article_type: str) -> list[str]:
     soup = BeautifulSoup(content, 'html.parser')
     try:
         article_list = soup.find_all('article')
         a_tag_list = []
-        article_list = [*filter(lambda article: is_news(article), article_list)]
+        article_list = [*filter(lambda article: is_necessary_type(article, article_type), article_list)]
         for div in article_list:
             a_tag = div.find('a', {'data-track-action': 'view article'})
             a_tag_list.append(a_tag)
         if not a_tag_list:
-            print('News links not found')
             return None
         return ['https://www.nature.com' + a_tag['href'] for a_tag in a_tag_list]
     except (KeyError, AttributeError, TypeError):
@@ -41,9 +36,9 @@ def extract_news_links(content: str) -> list[str]:
         return None
 
 
-def save_content_to_file(file_name, content):
+def save_content_to_file(file_name, content, page_n):
     try:
-        with open(file_name, 'wb') as new_file:
+        with open(f'./Page_{page_n}/' + file_name, 'wb') as new_file:
             new_file.write(content)
             return file_name
     except(Exception):
@@ -59,28 +54,32 @@ def extract_text(content):
     return title, text.strip()
 
 
-def save_news_text_by_links(news_links):
+def save_news_text_by_links(news_links, page_n):
+    os.mkdir(f'Page_{page_n}')
     saved_articles = []
+    if not news_links:
+        return
     for link in news_links:
         response = send_request(link)
-        extract_text(response.content)
-        title, content = extract_text(response.content)
-        title = title.translate(str.maketrans('', '', string.punctuation)).replace(' ', '_')
-        file_name = save_content_to_file(title + '.txt', content.encode())
-        saved_articles.append(file_name)
+        if response:
+            extract_text(response.content)
+            title, content = extract_text(response.content)
+            title = title.translate(str.maketrans('', '', string.punctuation)).replace(' ', '_')
+            file_name = save_content_to_file(title + '.txt', content.encode(), page_n)
+            saved_articles.append(file_name)
     return saved_articles
 
 
 def main():
     pages_number, article_type = get_user_input()
     url = 'https://www.nature.com/nature/articles?sort=PubDate&year=2020'
-    news_links: list = []
     for page_n in range(1, pages_number + 1):
-        response: requests.Response = send_request(url)
-        next_news_links: list = extract_news_links(response.content)
-        news_links += next_news_links
-    saved_articles = save_news_text_by_links(news_links)
-    print('Saved articles: ' + str(saved_articles))
+        response: requests.Response = send_request(url + f'&page={page_n}')
+        if response.status_code == 404:
+            break
+        news_links: list = extract_news_links(response.content, article_type)
+        save_news_text_by_links(news_links, page_n)
+    print('Saved all articles.')
 
 
 if __name__ == '__main__':

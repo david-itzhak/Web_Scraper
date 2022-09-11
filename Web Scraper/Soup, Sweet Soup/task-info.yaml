@@ -139,27 +139,10 @@ files:
     </body>
     </html>
   learner_created: true
-- name: Moderna_COVID_vaccine_becomes_second_to_get_US_authorization.txt
-  visible: true
-  learner_created: true
-- name: Biden’s_pick_to_head_US_environment_agency_heartens_scientists.txt
-  visible: true
-  learner_created: true
-- name: Is_lightning_striking_the_Arctic_more_than_ever_before.txt
-  visible: true
-  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/11759#comment
-status: Failed
+status: Solved
 feedback:
-  message: |-
-    Wrong answer in test #1
-
-    Impossible to find directory H:\JBAP\Web Scraper\Web Scraper\task\Page_1
-
-    Please find below the output of your program during this failed test.
-
-    ---
-
-    Saved articles: ['Biden’s_pick_to_head_US_environment_agency_heartens_scientists.txt', 'Moderna_COVID_vaccine_becomes_second_to_get_US_authorization.txt', 'Is_lightning_striking_the_Arctic_more_than_ever_before.txt']
-  time: Sun, 11 Sep 2022 08:18:11 UTC
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">JetBrains
+    Academy</a> to continue learning.
+  time: Sun, 11 Sep 2022 09:29:29 UTC
 record: -1
